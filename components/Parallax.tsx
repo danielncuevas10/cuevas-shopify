@@ -50,7 +50,7 @@ export default function Parallax() {
 
       <div className="absolute bottom-12 left-8 md:left-16 text-[#F4F5F0] space-y-4 z-20">
         <h1 className="text-5xl md:text-7xl font-medium tracking-tight font-montserrat">
-          New Summer Collection
+          Nueva Colección
         </h1>
 
         <div className="flex gap-6 pt-4">
@@ -58,13 +58,13 @@ export default function Parallax() {
             href="/collections/womens"
             className="border-b border-[#F4F5F0] pb-1 uppercase text-sm font-bold hover:opacity-50 transition"
           >
-            Shop Woman
+            Comprar Mujer
           </Link>
           <Link
             href="/collections/mens"
             className="border-b border-[#F4F5F0] pb-1 uppercase text-sm font-bold hover:opacity-50 transition"
           >
-            Shop Men
+            Comprar Hombre
           </Link>
         </div>
       </div>

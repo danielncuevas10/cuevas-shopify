@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const POPULAR_DATA = {
-  women: [
+  mujer: [
     {
       id: 1,
       title: "Matching Sets",
@@ -38,7 +38,7 @@ const POPULAR_DATA = {
       img2: "/images/collections/women/cap1.png",
     },
   ],
-  men: [
+  hombre: [
     {
       id: 5,
       title: "Urban Tech",
@@ -75,18 +75,18 @@ const POPULAR_DATA = {
 };
 
 export default function PopularSection() {
-  const [activeTab, setActiveTab] = useState<"men" | "women">("men");
+  const [activeTab, setActiveTab] = useState<"hombre" | "mujer">("hombre");
 
   return (
     <section className="w-full px-4 md:px-10 py-5">
       <h2 className="font-montserrat mb-5 uppercase font-semibold">
-        Popular right now
+        Popular ahora mismo
       </h2>
       <div className="flex gap-8 mb-8">
-        {["men", "women"].map((tab) => (
+        {["hombre", "mujer"].map((tab) => (
           <button
             key={tab}
-            onClick={() => setActiveTab(tab as "men" | "women")}
+            onClick={() => setActiveTab(tab as "hombre" | "mujer")}
             className={`uppercase cursor-pointer transition-all border-b-2 pb-1 ${
               activeTab === tab
                 ? "border-black font-semibold"

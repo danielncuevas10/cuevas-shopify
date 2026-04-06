@@ -7,14 +7,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Shop</h3>
+            <h3 className="text-white font-semibold text-lg mb-4">Tienda</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/collections/new-collection"
                   className="hover:text-white transition-colors"
                 >
-                  New Collection
+                  Nueva colección
                 </Link>
               </li>
               <li>
@@ -22,7 +22,7 @@ export default function Footer() {
                   href="/collections/new-collection"
                   className="hover:text-white transition-colors"
                 >
-                  Best Sellers
+                  Más vendidos
                 </Link>
               </li>
               <li>
@@ -30,7 +30,7 @@ export default function Footer() {
                   href="/collections/new-collection"
                   className="hover:text-white transition-colors"
                 >
-                  Sale
+                  Ofertas
                 </Link>
               </li>
               <li>
@@ -38,7 +38,7 @@ export default function Footer() {
                   href="/collections/new-collection"
                   className="hover:text-white transition-colors"
                 >
-                  All Collections
+                  Todas las colecciones
                 </Link>
               </li>
             </ul>
@@ -52,7 +52,7 @@ export default function Footer() {
                   href="/collections/mens"
                   className="hover:text-white transition-colors"
                 >
-                  Men
+                  Hombre
                 </Link>
               </li>
               <li>
@@ -60,7 +60,7 @@ export default function Footer() {
                   href="/collections/womens"
                   className="hover:text-white transition-colors"
                 >
-                  Women
+                  Mujer
                 </Link>
               </li>
               <li>
@@ -68,7 +68,7 @@ export default function Footer() {
                   href="/collections/unisex"
                   className="hover:text-white transition-colors"
                 >
-                  Accessories
+                  Accessorios
                 </Link>
               </li>
               <li>
@@ -83,11 +83,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Support</h3>
+            <h3 className="text-white font-semibold text-lg mb-4">Soporte</h3>
             <ul className="space-y-2">
               <li>
                 <a href="/faq" className="hover:text-white transition-colors">
-                  FAQ
+                  Preguntas frecuentes
                 </a>
               </li>
               <li>
@@ -95,7 +95,7 @@ export default function Footer() {
                   href="/shipping"
                   className="hover:text-white transition-colors"
                 >
-                  Shipping Info
+                  Información de envíos
                 </a>
               </li>
               <li>
@@ -103,7 +103,7 @@ export default function Footer() {
                   href="/returns"
                   className="hover:text-white transition-colors"
                 >
-                  Returns
+                  Devoluciones
                 </a>
               </li>
               <li>
@@ -111,7 +111,7 @@ export default function Footer() {
                   href="/contact"
                   className="hover:text-white transition-colors"
                 >
-                  Contact Us
+                  Contáctanos
                 </a>
               </li>
             </ul>

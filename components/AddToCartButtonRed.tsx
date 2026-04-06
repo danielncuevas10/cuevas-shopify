@@ -40,7 +40,7 @@ export default function AddToCartButtonRed({
         className="mt-4 w-full p-12 md:px-5 py-4 bg-[#C8102E] text-white rounded disabled:opacity-50 uppercase font-semibold tracking-wide cursor-pointer"
         aria-disabled={disabled}
       >
-        Add to cart
+        Agregar al Carrito
       </button>
     </main>
   );

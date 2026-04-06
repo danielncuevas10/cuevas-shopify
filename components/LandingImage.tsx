@@ -8,21 +8,21 @@ const HERO_CONTENT = [
     id: 1,
     mobileSrc: "/images/landing/landing1-mobile.png",
     desktopSrc: "/images/landing/landing1-desktop.png",
-    title: "New Summer Collection",
+    title: "Nueva Colleción de Verano",
     link: "/collections/new-collection",
   },
   {
     id: 2,
     mobileSrc: "/images/landing/landing4-mobile.png",
     desktopSrc: "/images/landing/landing4-desktop.png",
-    title: "World Cup Essentials",
+    title: "Esenciales de la Copa del Mundo",
     link: "/collections/mens",
   },
   {
     id: 3,
     mobileSrc: "/images/landing/landing5-mobile.png",
     desktopSrc: "/images/landing/landing5-desktop.png",
-    title: "Everyday Essentials",
+    title: "Esenciales Diarios",
     link: "/collections/unisex",
   },
 ];
@@ -77,13 +77,13 @@ export default function HeroSection() {
             href="/collections/womens"
             className="border-b border-[#F4F5F0] pb-1 uppercase text-sm font-bold hover:opacity-50 transition"
           >
-            Shop Woman
+            Comprar Mujer
           </Link>
           <Link
             href="/collections/mens"
             className="border-b border-[#F4F5F0] pb-1 uppercase text-sm font-bold hover:opacity-50 transition"
           >
-            Shop Men
+            Comprar Hombre
           </Link>
         </div>
       </div>

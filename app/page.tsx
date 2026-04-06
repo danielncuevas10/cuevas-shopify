@@ -58,7 +58,7 @@ export default async function Home() {
 
       <section className="w-full pl-4 pr-0 md:pl-10 py-15">
         <h2 className="font-montserrat mb-10 uppercase font-semibold">
-          just dropped in
+          Recién llegado
         </h2>
         <ResponsiveCarousel products={newProducts} />
       </section>
@@ -69,7 +69,7 @@ export default async function Home() {
 
       <section className="w-full pl-4 pr-0 md:pl-10 pt-25">
         <h2 className="font-montserrat mb-10 uppercase font-semibold">
-          New season
+          Nueva Temporada
         </h2>
         <ResponsiveCarousel products={unisexProducts} />
       </section>

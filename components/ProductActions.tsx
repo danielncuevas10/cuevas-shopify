@@ -60,7 +60,7 @@ export default function ProductActions({
           selectedVariant?.id ||
           (isOneSize ? product.variants.edges[0].node.id : "")
         }
-        size={selectedSize || (isOneSize ? "Unisize" : "")}
+        size={selectedSize || (isOneSize ? "Talla única" : "")}
         title={product.title}
         price={
           selectedVariant?.price.amount ||

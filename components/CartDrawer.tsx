@@ -85,10 +85,10 @@ export default function CartDrawer() {
         </button>
 
         <h3 className="font-bold mb-2 text-black uppercase text-center py-2">
-          Your bag
+          Tu carrito
         </h3>
 
-        <>
+        <div className="flex-1 overflow-y-auto px-5 no-scrollbar flex flex-col">
           {items.length >= 1 ? (
             <div className="mt-4 w-full py-2 bg-[#F5F5F5] rounded-sm text-black mb-10">
               <div className="p-2 flex content-start">
@@ -100,128 +100,132 @@ export default function CartDrawer() {
                 />
                 <p className="px-2 text-gray-700">
                   <span className="font-bold text-black">
-                    Your items aren't reserved
+                    Tus artículos no están reservados
                   </span>
-                  , checkout quickly to make sure you don't miss them
+                  , realiza tu compra rápidamente para asegurarte de no
+                  perdértelos.
                 </p>
               </div>
             </div>
           ) : null}
-        </>
 
-        {items.length === 0 ? (
-          <div className="h-3/4 flex items-center justify-center">
-            <div className="text-sm text-black flex flex-col items-center">
-              <Image
-                src="/images/bag/empty.svg"
-                alt="user"
-                width={120}
-                height={200}
-                className="opacity-70"
-              />
-              <p className="py-5 uppercase font-bold text-l">
-                Your Cart is empty
-              </p>
+          {items.length === 0 ? (
+            <div className="h-3/4 flex items-center justify-center">
+              <div className="text-sm text-black flex flex-col items-center">
+                <Image
+                  src="/images/bag/empty.svg"
+                  alt="user"
+                  width={120}
+                  height={200}
+                  className="opacity-70"
+                />
+                <p className="py-5 uppercase font-bold text-l">
+                  Tu carrito está vacío
+                </p>
+              </div>
             </div>
-          </div>
-        ) : (
-          <div className="flex-1 overflow-y-auto px-5 no-scrollbar">
-            <ul className="space-y-3 text-black">
-              {items.map((it) => (
-                <li
-                  key={it.variantId}
-                  className="flex justify-between items-center"
-                >
-                  <div>
-                    <div className="flex">
-                      {it.image && (
-                        <Image
-                          src={it.image}
-                          alt={it.title}
-                          width={120}
-                          height={50}
-                          className="rounded"
-                        />
-                      )}
-                      <div className="text-sm font-medium text-black px-5 flex flex-col">
-                        <span className="uppercase">{it.title}</span>
-
-                        {it.size && (
-                          <span className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">
-                            Size:{" "}
-                            <span className="text-black font-bold">
-                              {it.size}
-                            </span>
-                          </span>
+          ) : (
+            <div className="flex-1 overflow-y-auto px-5 no-scrollbar">
+              <ul className="space-y-3 text-black">
+                {items.map((it) => (
+                  <li
+                    key={it.variantId}
+                    className="flex justify-between items-center"
+                  >
+                    <div>
+                      <div className="flex">
+                        {it.image && (
+                          <Image
+                            src={it.image}
+                            alt={it.title}
+                            width={120}
+                            height={50}
+                            className="rounded"
+                          />
                         )}
+                        <div className="text-sm font-medium text-black px-5 flex flex-col">
+                          <span className="uppercase">{it.title}</span>
 
-                        <div className="flex items-center gap-2">
-                          <div className="text-sm font-bold pt-2">
-                            {it.price
-                              ? `$${Number(it.price).toLocaleString()}`
-                              : ""}
+                          {it.size && (
+                            <span className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">
+                              Talla:{" "}
+                              <span className="text-black font-bold">
+                                {it.size}
+                              </span>
+                            </span>
+                          )}
+
+                          <div className="flex items-center gap-2">
+                            <div className="text-sm font-bold pt-2">
+                              {it.price
+                                ? `$${Number(it.price).toLocaleString()}`
+                                : ""}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="flex items-center gap-2 mt-4 px-7">
-                      <button
-                        onClick={() => {
-                          if (it.quantity === 1) {
-                            dispatch({
-                              type: "REMOVE_ITEM",
-                              payload: { variantId: it.variantId },
-                            });
-                          } else {
+                      <div className="flex items-center gap-2 mt-4 px-7">
+                        <button
+                          onClick={() => {
+                            if (it.quantity === 1) {
+                              dispatch({
+                                type: "REMOVE_ITEM",
+                                payload: { variantId: it.variantId },
+                              });
+                            } else {
+                              dispatch({
+                                type: "SET_QUANTITY",
+                                payload: {
+                                  variantId: it.variantId,
+                                  quantity: it.quantity - 1,
+                                },
+                              });
+                            }
+                          }}
+                          className="text-m text-black tracking-tighter"
+                        >
+                          --
+                        </button>
+
+                        <span className="w-6 text-center text-m text-black">
+                          {it.quantity}
+                        </span>
+
+                        <button
+                          onClick={() =>
                             dispatch({
                               type: "SET_QUANTITY",
                               payload: {
                                 variantId: it.variantId,
-                                quantity: it.quantity - 1,
+                                quantity: it.quantity + 1,
                               },
-                            });
+                            })
                           }
-                        }}
-                        className="text-m text-black tracking-tighter"
-                      >
-                        --
-                      </button>
-
-                      <span className="w-6 text-center text-m text-black">
-                        {it.quantity}
-                      </span>
-
-                      <button
-                        onClick={() =>
-                          dispatch({
-                            type: "SET_QUANTITY",
-                            payload: {
-                              variantId: it.variantId,
-                              quantity: it.quantity + 1,
-                            },
-                          })
-                        }
-                        className="text-m text-black"
-                      >
-                        +
-                      </button>
+                          className="text-m text-black"
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-4 font-semibold text-black border-t border-gray-300 pt-5">
-              Subtotal: ${subtotal.toLocaleString()}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="p-5 mt-2 bg-white border-t border-gray-100">
+                <div className="flex justify-between font-bold text-black uppercase tracking-widest text-xs mb-4">
+                  Subtotal: ${subtotal.toLocaleString()}
+                </div>
+                <button
+                  onClick={handleCheckout}
+                  disabled={loading}
+                  className="mt-4 w-full py-3 bg-[#C8102E] text-white rounded disabled:opacity-50 uppercase font-semibold tracking-wide cursor-pointer hover:opacity-80"
+                >
+                  {loading ? "Procesando compra..." : "Finalizar compra"}
+                </button>
+              </div>
             </div>
-            <button
-              onClick={handleCheckout}
-              disabled={loading}
-              className="mt-4 w-full py-3 bg-[#C8102E] text-white rounded disabled:opacity-50 uppercase font-semibold tracking-wide cursor-pointer hover:opacity-80"
-            >
-              {loading ? "Creating checkout…" : "Checkout"}
-            </button>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </>
   );

@@ -5,31 +5,32 @@ export default function AboutUs() {
         <div className="grid grid-cols-1  gap-8">
           <div>
             <h3 className="uppercase text-white font-bold text-xs tracking-widest mb-4">
-              The Brand
+              ¿Quiénes somos?
             </h3>
             <p className="text-smleading-relaxed">
-              Born in the heart of Mexico, we are an alternative design house
-              reimagining street culture for the next generation.
+              Nacimos en México con una visión clara: crear una marca nueva,
+              moderna y con estilo propio para una generación que quiere
+              destacar.
             </p>
           </div>
 
           <div>
             <h3 className="uppercase text-white font-bold text-xs tracking-widest mb-4">
-              The Vision
+              Nuestra visión
             </h3>
             <p className="text-sm leading-relaxed">
-              We bridge the gap between traditional craftsmanship and
-              contemporary design, creating pieces that speak your language.
+              Diseñamos piezas con identidad, que van con tendencias y con una
+              esencia auténtica que representa lo nuevo del estilo mexicano.
             </p>
           </div>
 
           <div>
             <h3 className="uppercase text-white font-bold text-xs tracking-widest mb-4">
-              Our Community
+              Nuestra comunidad
             </h3>
             <p className="text-sm leading-relaxed">
-              Made for the bold, the young, and the dreamers. Join the movement
-              shifting the narrative of Mexican fashion.
+              Hecho para personas seguras, creativas y con actitud. Una
+              comunidad que impulsa una nueva forma de vestir.
             </p>
           </div>
         </div>
