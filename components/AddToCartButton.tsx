@@ -60,7 +60,7 @@ export default function AddToCartButton({
     flex items-center justify-center 
     w-10 h-10 
     bg-white rounded-full 
-    hover:scale-110 hover:bg-amber-50 active:scale-95 transition-transform cursor-pointer
+    hover:scale-110 hover:scale-110 active:scale-95 transition-transform cursor-pointer
 
   "
       aria-disabled={disabled}

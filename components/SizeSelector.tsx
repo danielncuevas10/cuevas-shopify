@@ -38,8 +38,8 @@ export default function SizeSelector({
                 !isAvailable
                   ? "border-gray-100 text-gray-300 bg-gray-50 line-through cursor-not-allowed"
                   : isSelected
-                  ? "border-gray-400 bg-black text-white"
-                  : "border-gray-400 text-black hover:bg-black hover:text-white cursor-pointer"
+                  ? "border-black bg-black text-white"
+                  : "border-black text-black hover:bg-black hover:text-white cursor-pointer"
               }
             `}
           >

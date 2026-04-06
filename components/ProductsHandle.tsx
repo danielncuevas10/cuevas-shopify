@@ -35,16 +35,16 @@ export default function ProductGallery({ images }: { images: any[] }) {
 
       <div
         className="
-        hidden max-sm:flex 
-        absolute bottom-4 left-1/2 -translate-x-1/2 
-        gap-2 z-10
-      "
+    flex md:hidden ...
+    absolute bottom-4 left-1/2 -translate-x-1/2 
+    gap-2 z-10
+  "
       >
         {images.slice(1).map((_, i) => (
           <div
             key={i}
-            className={`h-0.5 w-8 transition-all duration-300 ${
-              i === activeIndex ? "bg-gray-600" : "bg-[#F4F5F0]"
+            className={`h-0.5 rounded-full transition-all duration-300 ${
+              i === activeIndex ? "w-10 bg-gray-700" : "w-6 bg-gray-300"
             }`}
           />
         ))}

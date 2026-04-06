@@ -70,13 +70,13 @@ export default async function Page({
             <div className="flex flex-col gap-3">
               <div className="flex justify-between items-end">
                 <span className="text-[10px] font-bold tracking-widest text-gray-400">
-                  {sizeOption ? "Select a size" : "Size"}
+                  {sizeOption ? "Elige tu Talla" : "Talla"}
                 </span>
                 {isLowStock && (
                   <div className="flex items-center gap-1.5 ">
                     <span className="relative flex h-2 w-2"></span>
                     <p className="text-[10px] text-red-700 font-bold uppercase tracking-tighter">
-                      Only {totalRemaining} left!
+                      Solo quedan {totalRemaining}!
                     </p>
                   </div>
                 )}

@@ -15,7 +15,7 @@ const HERO_CONTENT = [
     id: 2,
     mobileSrc: "/images/landing/landing4-mobile.png",
     desktopSrc: "/images/landing/landing4-desktop.png",
-    title: "Esenciales de la Copa del Mundo",
+    title: "Esenciales Copa del Mundo",
     link: "/collections/mens",
   },
   {
@@ -34,6 +34,7 @@ export default function HeroSection() {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_CONTENT.length);
     }, 5000);
+
     return () => clearInterval(timer);
   }, []);
 
@@ -42,7 +43,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full h-[80vh] overflow-hidden bg-gray-100">
       <Link href={currentHero.link}>
-        <div className="relative w-full h-full cursor-pointer">
+        <div className="relative w-full h-full cursor-pointer group">
           <div className="hidden md:block relative w-full h-full">
             <Image
               src={currentHero.desktopSrc}
@@ -63,7 +64,7 @@ export default function HeroSection() {
             />
           </div>
 
-          <div className="absolute inset-0 bg-black/10 md:bg-black/30 z-10 transition-opacity duration-300 md:group-hover:bg-black/60" />
+          <div className="absolute inset-0 bg-black/10 md:bg-black/30 z-10 transition-opacity duration-300 md:group-hover:bg-black/35" />
         </div>
       </Link>
 
@@ -92,8 +93,10 @@ export default function HeroSection() {
         {HERO_CONTENT.map((_, i) => (
           <div
             key={i}
-            className={`h-0.5 w-8 transition-all ${
-              i === currentIndex ? "bg-gray-600" : "bg-[#F4F5F0]"
+            onClick={() => setCurrentIndex(i)}
+            onMouseEnter={() => setCurrentIndex(i)}
+            className={`h-0.5 rounded-full cursor-pointer transition-all duration-300 ${
+              i === currentIndex ? "w-10 bg-gray-700" : "w-6 bg-gray-100"
             }`}
           />
         ))}

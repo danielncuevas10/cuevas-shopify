@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useSpring } from "framer-motion";
@@ -21,6 +21,13 @@ export default function ResponsiveCarousel({
 }: {
   products: Product[];
 }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const width = e.currentTarget.offsetWidth;
+    const scrollLeft = e.currentTarget.scrollLeft;
+    setActiveIndex(Math.round(scrollLeft / width));
+  };
   const ref = useRef<HTMLDivElement | null>(null);
 
   const scale = useSpring(1, { stiffness: 300, damping: 20 });
@@ -31,6 +38,7 @@ export default function ResponsiveCarousel({
     <div className="relative">
       <div
         ref={ref}
+        onScroll={handleScroll}
         className="
           flex gap-1 lg:gap-3 overflow-x-auto snap-x snap-mandatory touch-pan-x py-2
           [&::-webkit-scrollbar]:hidden [scrollbar-width:none] [-ms-overflow-style:none]
@@ -89,6 +97,16 @@ export default function ResponsiveCarousel({
               </div>
             </div>
           </article>
+        ))}
+      </div>
+      <div className="mt-4 flex justify-center gap-2 md:hidden">
+        {products.map((_, i) => (
+          <div
+            key={i}
+            className={`h-0.5 rounded-full transition-all duration-300 ${
+              i === activeIndex ? "w-10 bg-gray-700" : "w-6 bg-gray-300"
+            }`}
+          />
         ))}
       </div>
     </div>
