@@ -49,7 +49,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/collections/mens"
+                  href="/collections/rompevientos"
                   className="hover:text-white transition-colors"
                 >
                   Hombre
@@ -126,7 +126,8 @@ export default function Footer() {
               <p className="">Diseñado y desarrollado por The Cave.</p>{" "}
               <p className="py-2 md:py-0 md:px-5 lg:px-15">
                 {" "}
-                © {new Date().getFullYear()} Cuevas. Todos los derechos reservados.
+                © {new Date().getFullYear()} Cuevas. Todos los derechos
+                reservados.
               </p>
             </div>
 

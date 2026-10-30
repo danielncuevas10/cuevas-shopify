@@ -15,7 +15,7 @@ export default async function Home() {
     getCollectionByHandle("new-collection", 12),
     getCollectionByHandle("womens", 12),
     getCollectionByHandle("unisex", 12),
-    getCollectionByHandle("mens", 12),
+    getCollectionByHandle("rompevientos", 12),
   ]);
 
   const formatPrice = (amount?: string | number, code?: string) => {
@@ -61,7 +61,7 @@ export default async function Home() {
         <h2 className="font-montserrat mb-10 uppercase font-semibold">
           Recién llegado
         </h2>
-        <ResponsiveCarousel products={newProducts} />
+        <ResponsiveCarousel products={newProducts} compact />
       </section>
 
       <PupularSection />

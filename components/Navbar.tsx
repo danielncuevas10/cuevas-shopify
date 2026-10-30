@@ -11,9 +11,9 @@ export default function Navbar() {
   const totalCount = items.reduce((s, i) => s + i.quantity, 0);
 
   const navLinks = [
-    { name: "Hombre", href: "/collections/mens" },
-    { name: "Mujer", href: "/collections/womens" },
-    { name: "Unisex", href: "/collections/unisex" },
+    { name: "Rompevientos", href: "/collections/rompevientos" },
+    { name: "Motocicletas", href: "/collections/motocicletas" },
+    { name: "Baseball", href: "/collections/baseball" },
   ];
 
   return (

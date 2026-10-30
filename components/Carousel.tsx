@@ -19,8 +19,11 @@ type Product = {
 
 export default function ResponsiveCarousel({
   products,
+  compact = false,
 }: {
   products: Product[];
+  // Smaller cards on desktop only; mobile size is unchanged.
+  compact?: boolean;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -48,7 +51,9 @@ export default function ResponsiveCarousel({
         {products.map((p) => (
           <article
             key={p.id}
-            className="snap-start shrink-0 w-84 lg:w-xl bg-white"
+            className={`snap-start shrink-0 w-84 ${
+              compact ? "lg:w-[30rem]" : "lg:w-xl"
+            } bg-white`}
           >
             <div className="relative aspect-square bg-gray-100 overflow-hidden group rounded-md">
               <Link
