@@ -35,7 +35,7 @@ async function shopifyFetch(query: string, variables?: Record<string, any>) {
 }
 
 export async function getProducts(first = 12) {
-  const query = `query getProducts($first: Int!) {
+  const query = `query getProducts($first: Int!) @inContext(country: MX, language: ES) {
     products(first: $first) {
       edges {
         node {
@@ -51,7 +51,7 @@ export async function getProducts(first = 12) {
             minVariantPrice { amount currencyCode }
             maxVariantPrice { amount currencyCode }
           }
-            variants(first: 1) {
+            variants(first: 2) {
             edges {
                 node {
                 id
@@ -74,7 +74,7 @@ export async function getProducts(first = 12) {
 
 export async function getProductByHandle(handle: string) {
   const query = `
-    query getProductByHandle($handle: String!) {
+    query getProductByHandle($handle: String!) @inContext(country: MX, language: ES) {
       product(handle: $handle) {
         id
         title
@@ -123,6 +123,7 @@ export async function getProductByHandle(handle: string) {
   `;
   const data = await shopifyFetch(query, { handle });
   const product = data.product;
+  if (!product) return null;
 
   // Flatten images for easy mapping in UI
   const images = [
@@ -136,7 +137,7 @@ export async function getProductByHandle(handle: string) {
 // add to lib/shopify.ts (below your existing functions)
 export async function getCollectionByHandle(handle: string, first = 12) {
   const query = `
-    query collectionByHandle($handle: String!, $first: Int!) {
+    query collectionByHandle($handle: String!, $first: Int!) @inContext(country: MX, language: ES) {
       collectionByHandle(handle: $handle) {
         id
         title
@@ -151,7 +152,8 @@ export async function getCollectionByHandle(handle: string, first = 12) {
               handle
               featuredImage { url altText }
               priceRange { minVariantPrice { amount currencyCode } }
-              variants(first:1) {
+              # first: 2 so the UI can tell single-variant products from ones that need a size picked
+              variants(first: 2) {
                 edges { node { id price { amount currencyCode } availableForSale } }
               }
             }

@@ -11,8 +11,8 @@ export default function Navbar() {
   const totalCount = items.reduce((s, i) => s + i.quantity, 0);
 
   const navLinks = [
-    { name: "Men's", href: "/collections/mens" },
-    { name: "Women's", href: "/collections/womens" },
+    { name: "Hombre", href: "/collections/mens" },
+    { name: "Mujer", href: "/collections/womens" },
     { name: "Unisex", href: "/collections/unisex" },
   ];
 
@@ -23,13 +23,13 @@ export default function Navbar() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="flex items-center justify-center cursor-pointer h-10 w-10 transition-transform duration-300 relative z-110"
-            aria-label="Toggle menu"
+            aria-label="Abrir o cerrar menú"
           >
             {isMenuOpen ? (
               <span className="pl-3 font-bold uppercase tracking-tighter">
                 <Image
                   src="/images/bag/close.svg"
-                  alt="cart"
+                  alt="Cerrar menú"
                   width={18}
                   height={18}
                 />
@@ -37,7 +37,7 @@ export default function Navbar() {
             ) : (
               <Image
                 src="/images/navbar/dropdown.png"
-                alt="menu"
+                alt="Menú"
                 width={20}
                 height={20}
                 className="object-contain"
@@ -105,12 +105,12 @@ export default function Navbar() {
           <button
             onClick={() => dispatch({ type: "TOGGLE_CART" })}
             className="relative hover:opacity-50 cursor-pointer transition-all"
-            aria-label="Open cart"
+            aria-label="Abrir carrito"
             type="button"
           >
             <Image
               src="/images/navbar/shopping-bag.png"
-              alt="cart"
+              alt="Carrito"
               width={18}
               height={18}
             />

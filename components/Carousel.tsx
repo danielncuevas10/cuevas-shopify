@@ -14,6 +14,7 @@ type Product = {
   currency?: string;
   variantId?: string | null;
   available?: boolean;
+  requiresSelection?: boolean;
 };
 
 export default function ResponsiveCarousel({
@@ -63,7 +64,7 @@ export default function ResponsiveCarousel({
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full text-sm text-gray-500">
-                    No image
+                    Sin imagen
                   </div>
                 )}
                 <div className="absolute inset-0 bg-black/5 z-10 transition-opacity duration-300 md:group-hover:bg-black/0" />
@@ -78,11 +79,13 @@ export default function ResponsiveCarousel({
                       price={p.price}
                       image={p.image}
                       disabled={!p.available}
+                      handle={p.handle}
+                      requiresSelection={p.requiresSelection}
                     />
                   </motion.div>
                 ) : (
                   <span className="bg-white/80 px-2 py-1 text-xs rounded shadow-sm">
-                    Out of Stock
+                    Agotado
                   </span>
                 )}
               </div>

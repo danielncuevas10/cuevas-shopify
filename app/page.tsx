@@ -20,7 +20,7 @@ export default async function Home() {
 
   const formatPrice = (amount?: string | number, code?: string) => {
     if (!amount) return "";
-    return new Intl.NumberFormat(undefined, {
+    return new Intl.NumberFormat("es-MX", {
       style: "currency",
       currency: code || "MXN",
       maximumFractionDigits: 0,
@@ -42,6 +42,7 @@ export default async function Home() {
         ),
         variantId: firstVariant?.id,
         available: firstVariant?.availableForSale,
+        requiresSelection: (p.variants?.edges?.length ?? 0) > 1,
       };
     });
 

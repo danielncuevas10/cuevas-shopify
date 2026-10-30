@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { getProductByHandle } from "@/lib/shopify";
 import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
@@ -12,10 +13,10 @@ export default async function Page({
   params: Promise<{ handle: string }>;
 }) {
   const { handle } = await params;
-  if (!handle) return <div>Invalid Product</div>;
+  if (!handle) notFound();
 
   const product = await getProductByHandle(handle);
-  if (!product) return <div>Product Not Found</div>;
+  if (!product) notFound();
 
   const sizeOption = product.options.find(
     (option: any) => option.name.toLowerCase() === "size"
@@ -34,7 +35,7 @@ export default async function Page({
     size:
       edge.node.selectedOptions.find(
         (opt: any) => opt.name.toLowerCase() === "size"
-      )?.value || "Unisize",
+      )?.value || "Talla única",
     available: edge.node.availableForSale,
     quantity: edge.node.quantityAvailable ?? 0,
   }));

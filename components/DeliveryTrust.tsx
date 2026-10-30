@@ -8,7 +8,7 @@ export default function DeliveryTrust() {
           <div className="flex md:flex-col items-center gap-5">
             <Image
               src="/images/landing/iconsDelivery/delivery.png"
-              alt="car"
+              alt="Envío"
               width={38}
               height={18}
               className="opacity-75 md:w-10 lg:w-15"
@@ -18,7 +18,7 @@ export default function DeliveryTrust() {
           <div className="flex md:flex-col items-center gap-5">
             <Image
               src="/images/landing/iconsDelivery/review.png"
-              alt="review"
+              alt="Reseñas"
               width={38}
               height={18}
               className="opacity-75 md:w-10 lg:w-15"
@@ -28,7 +28,7 @@ export default function DeliveryTrust() {
           <div className="flex md:flex-col items-center gap-5">
             <Image
               src="/images/landing/iconsDelivery/shopify.png"
-              alt="shopify logo"
+              alt="Logo de Shopify"
               width={38}
               height={18}
               className="opacity-75 md:w-10 lg:w-15"

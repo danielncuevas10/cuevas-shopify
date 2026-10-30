@@ -7,7 +7,7 @@ export async function POST(req: Request) {
     const { lineItems } = await req.json();
 
     const query = `
-      mutation cartCreate($input: CartInput!) {
+      mutation cartCreate($input: CartInput!) @inContext(country: MX, language: ES) {
         cartCreate(input: $input) {
           cart { id checkoutUrl }
           userErrors { field message }

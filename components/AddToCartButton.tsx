@@ -1,7 +1,11 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { useCartDispatch } from "./CartContext";
+
+const buttonClassName =
+  "flex items-center justify-center w-10 h-10 bg-white rounded-full hover:scale-110 active:scale-95 transition-transform cursor-pointer";
 
 export default function AddToCartButton({
   variantId,
@@ -9,14 +13,38 @@ export default function AddToCartButton({
   price,
   image,
   disabled,
+  handle,
+  requiresSelection,
 }: {
   variantId: string;
   title: string;
   price?: string | number;
   image?: string;
   disabled?: boolean;
+  handle?: string;
+  requiresSelection?: boolean;
 }) {
   const dispatch = useCartDispatch();
+
+  // Products with several variants (e.g. sizes) can't be added blindly:
+  // send the customer to the product page to pick one.
+  if (requiresSelection && handle) {
+    return (
+      <Link
+        href={`/product/${handle}`}
+        style={{ willChange: "transform" }}
+        className={buttonClassName}
+        aria-label={`Elegir talla de ${title}`}
+      >
+        <Image
+          src="/images/bag/toAdd.svg"
+          alt="Agregar al carrito"
+          width={22}
+          height={22}
+        />
+      </Link>
+    );
+  }
 
   function handleAdd() {
     if (!variantId) return;
@@ -56,18 +84,12 @@ export default function AddToCartButton({
       onClick={handleAdd}
       disabled={disabled}
       style={{ willChange: "transform" }}
-      className="
-    flex items-center justify-center 
-    w-10 h-10 
-    bg-white rounded-full 
-    hover:scale-110 hover:scale-110 active:scale-95 transition-transform cursor-pointer
-
-  "
+      className={buttonClassName}
       aria-disabled={disabled}
     >
       <Image
         src="/images/bag/toAdd.svg"
-        alt="add to cart"
+        alt="Agregar al carrito"
         width={22}
         height={22}
       />

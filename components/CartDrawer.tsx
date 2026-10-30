@@ -31,11 +31,11 @@ export default function CartDrawer() {
         window.location.href = json.url;
       } else {
         console.error("Checkout error", json);
-        alert("Checkout failed — check console");
+        alert("No pudimos procesar tu compra. Revisa tu carrito e inténtalo de nuevo.");
       }
     } catch (err) {
       console.error(err);
-      alert("Checkout request failed");
+      alert("Error de conexión. Inténtalo de nuevo.");
     } finally {
       setLoading(false);
     }
@@ -78,7 +78,7 @@ export default function CartDrawer() {
         >
           <Image
             src="/images/bag/close.svg"
-            alt="user"
+            alt="Cerrar carrito"
             width={20}
             height={20}
           />
@@ -94,7 +94,7 @@ export default function CartDrawer() {
               <div className="p-2 flex content-start">
                 <Image
                   src="/images/bag/attention.svg"
-                  alt="user"
+                  alt="Aviso"
                   width={20}
                   height={20}
                 />
@@ -114,7 +114,7 @@ export default function CartDrawer() {
               <div className="text-sm text-black flex flex-col items-center">
                 <Image
                   src="/images/bag/empty.svg"
-                  alt="user"
+                  alt="Carrito vacío"
                   width={120}
                   height={200}
                   className="opacity-70"
@@ -158,7 +158,7 @@ export default function CartDrawer() {
                           <div className="flex items-center gap-2">
                             <div className="text-sm font-bold pt-2">
                               {it.price
-                                ? `$${Number(it.price).toLocaleString()}`
+                                ? `$${Number(it.price).toLocaleString("es-MX")}`
                                 : ""}
                             </div>
                           </div>
@@ -213,7 +213,7 @@ export default function CartDrawer() {
 
               <div className="p-5 mt-2 bg-white border-t border-gray-100">
                 <div className="flex justify-between font-bold text-black uppercase tracking-widest text-xs mb-4">
-                  Subtotal: ${subtotal.toLocaleString()}
+                  Subtotal: ${subtotal.toLocaleString("es-MX")}
                 </div>
                 <button
                   onClick={handleCheckout}

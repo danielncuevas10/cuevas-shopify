@@ -27,7 +27,7 @@ export default function Parallax() {
           <div className="hidden md:block relative w-full h-full">
             <Image
               src="/images/collections/men/parallax-desktop.png"
-              alt="New Summer Collection"
+              alt="Nueva Colección de Verano"
               fill
               priority
               className="object-cover"
@@ -37,7 +37,7 @@ export default function Parallax() {
           <div className="block md:hidden relative w-full h-full">
             <Image
               src="/images/collections/men/parallax-phone.png"
-              alt="New Summer Collection"
+              alt="Nueva Colección de Verano"
               fill
               priority
               className="object-cover"

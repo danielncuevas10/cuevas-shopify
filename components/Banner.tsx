@@ -6,10 +6,10 @@ export default function Banner() {
           Envío Gratis Desde $800
         </div>
 
-        <div className="min-w-full text-center py-2">Envio a todo Mexico</div>
+        <div className="min-w-full text-center py-2">Envío a todo México</div>
 
         <div className="min-w-full text-center py-2">
-          Nuevas Colleciones Disponibles
+          Nuevas Colecciones Disponibles
         </div>
       </div>
     </div>

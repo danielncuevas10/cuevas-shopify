@@ -7,32 +7,32 @@ const POPULAR_DATA = {
   mujer: [
     {
       id: 1,
-      title: "Matching Sets",
-      description: "Amazing products...",
+      title: "Conjuntos",
+      description: "Piezas que combinan a la perfección.",
       slug: "new-collection",
       img1: "/images/collections/women/afri.png",
       img2: "/images/collections/women/afri1.png",
     },
     {
       id: 2,
-      title: "Summer Vibes",
-      description: "Stay cool...",
+      title: "Vibras de Verano",
+      description: "Mantente fresco con estilo.",
       slug: "new-collection",
       img1: "/images/collections/women/hoodie.png",
       img2: "/images/collections/women/hoodie1.png",
     },
     {
       id: 3,
-      title: "Matching Sets",
-      description: "Amazing products...",
+      title: "Conjuntos",
+      description: "Piezas que combinan a la perfección.",
       slug: "womens",
       img1: "/images/collections/women/spain.png",
       img2: "/images/collections/women/spain1.png",
     },
     {
       id: 4,
-      title: "Summer Vibes",
-      description: "Stay cool...",
+      title: "Vibras de Verano",
+      description: "Mantente fresco con estilo.",
       slug: "womens",
       img1: "/images/collections/women/cap.png",
       img2: "/images/collections/women/cap1.png",
@@ -41,32 +41,32 @@ const POPULAR_DATA = {
   hombre: [
     {
       id: 5,
-      title: "Urban Tech",
-      description: "Modern fit...",
+      title: "Estilo Urbano",
+      description: "Corte moderno para todos los días.",
       slug: "unisex",
       img1: "/images/collections/men/ita.png",
       img2: "/images/collections/men/ita1.png",
     },
     {
       id: 6,
-      title: "World Cup",
-      description: "Modern fit...",
+      title: "Copa del Mundo",
+      description: "Corte moderno para todos los días.",
       slug: "mens",
       img1: "/images/collections/men/brazil.png",
       img2: "/images/collections/men/brazil1.png",
     },
     {
       id: 7,
-      title: "Urban Tech",
-      description: "Modern fit...",
+      title: "Estilo Urbano",
+      description: "Corte moderno para todos los días.",
       slug: "mens",
       img1: "/images/collections/men/hoodie.png",
       img2: "/images/collections/men/hoodie1.png",
     },
     {
       id: 8,
-      title: "World Cup",
-      description: "Modern fit...",
+      title: "Copa del Mundo",
+      description: "Corte moderno para todos los días.",
       slug: "unisex",
       img1: "/images/collections/men/mex.png",
       img2: "/images/collections/men/mex1.png",
@@ -120,7 +120,7 @@ function CollectionCard({ item }: { item: any }) {
 
         <Image
           src={item.img2}
-          alt={`${item.title} hover`}
+          alt={`${item.title} (vista alternativa)`}
           fill
           className="object-cover absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         />

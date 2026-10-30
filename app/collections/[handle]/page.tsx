@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { getCollectionByHandle } from "@/lib/shopify";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,9 +27,7 @@ export default async function CollectionPage({
   const { handle } = await params;
   const collection = await getCollectionByHandle(handle);
 
-  if (!collection) {
-    return <div className="p-20 text-center">Collection not found</div>;
-  }
+  if (!collection) notFound();
 
   return (
     <>
@@ -71,10 +70,12 @@ export default async function CollectionPage({
                         price={product.priceRange.minVariantPrice.amount}
                         image={product.featuredImage?.url}
                         disabled={!isAvailable}
+                        handle={product.handle}
+                        requiresSelection={product.variants?.edges?.length > 1}
                       />
                     ) : (
                       <span className="bg-white/80 px-2 py-1 text-xs rounded shadow-sm">
-                        Out of Stock
+                        Agotado
                       </span>
                     )}
                   </div>

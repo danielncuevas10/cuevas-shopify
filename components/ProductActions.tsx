@@ -25,7 +25,7 @@ export default function ProductActions({
     if (isOneSize && product.variants.edges[0]) {
       const unisizeVariant = product.variants.edges[0].node;
       setSelectedVariant(unisizeVariant);
-      setSelectedSize("Unisize");
+      setSelectedSize("Talla única");
     }
   }, [isOneSize, product.variants.edges]);
 
